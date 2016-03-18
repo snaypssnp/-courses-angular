@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mail Box App</title>
+    <link href="/dist/styles.css" rel="stylesheet" />
+</head>
+
+<body ng-app="app">
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><i class="fa fa-envelope"></i> <strong>MAIL BOX</strong></a>
+        </div>
+    </nav>
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+
+                <li>
+                    <a class="active-menu" href="#"><i class="fa fa-dashboard"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-mail-reply"></i> Inbox</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-mail-forward"></i> Outbox</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-users"></i>Contacts</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-comment"></i>New Message</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+    <div id="page-wrapper">
+        <div id="page-inner">
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header">
+                        Dashboard
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary text-center no-boder bg-color-green green">
+                        <div class="panel-left pull-left green">
+                            <i class="fa fa-mail-reply fa-5x"></i>
+
+                        </div>
+                        <div class="panel-right">
+                            <h3>8,457</h3>
+                            <strong> Inbox</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary text-center no-boder bg-color-blue">
+                        <div class="panel-left pull-left blue">
+                            <i class="fa fa-mail-forward fa-5x"></i>
+                        </div>
+
+                        <div class="panel-right">
+                            <h3>52,160 </h3>
+                            <strong> Outbox</strong>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary text-center no-boder bg-color-red">
+                        <div class="panel-left pull-left red">
+                            <i class="fa fa-users fa-5x"></i>
+
+                        </div>
+                        <div class="panel-right">
+                            <h3>15,823 </h3>
+                            <strong> Users</strong>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <footer>
+
+
+            </footer>
+        </div>
+    </div>
+</div>
+<script src="/dist/scripts.js"></script>
+</body>
+
+</html>
