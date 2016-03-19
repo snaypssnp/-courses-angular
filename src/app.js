@@ -1,20 +1,33 @@
 'use strict';
 
 //css vendor
-import 'npm/bootstrap/dist/css/bootstrap.css';
-import 'npm/font-awesome/css/font-awesome.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
 
 //css custom
 import './assets/css/custom-styles.css';
 
 
-import angular from 'npm/angular';
-import uiRouter from 'npm/angular-ui-router';
+import angular from 'angular';
+import AngularUiRouter from 'angular-ui-router';
+
+
+
+import UserList from './components/user-list';
+import Dashboard from './components/dashboard';
+
+import Services from './services';
 
 angular
     .module('app', [
-        uiRouter,
+        AngularUiRouter,
+
+        Services.name,
+
+        UserList.name,
+        Dashboard.name
     ])
     .run(function() {
         console.log('app run');
-    });
+    })
+

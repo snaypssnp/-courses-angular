@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-strict-di>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mail Box App</title>
+    <link href="./dist/styles.css" rel="stylesheet" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+</head>
+
+<body  ng-cloak>
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><i class="fa fa-envelope"></i> <strong>MAIL BOX</strong></a>
+        </div>
+    </nav>
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+
+                <li>
+                    <a class="active-menu" ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-mail-reply"></i> Inbox</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-mail-forward"></i> Outbox</a>
+                </li>
+                <li>
+                    <a ui-sref="user-list" ><i class="fa fa-users"></i>Users</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-comment"></i>New Message</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+    <div id="page-wrapper">
+        <div id="page-inner">
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header">
+                        Dashboard
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+
+
+            <ui-view>
+
+            </ui-view>
+
+
+
+
+            <footer>
+
+
+            </footer>
+        </div>
+    </div>
+</div>
+<script src="./dist/scripts.js"></script>
+</body>
+
+</html>

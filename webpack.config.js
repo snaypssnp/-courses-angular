@@ -11,13 +11,15 @@ module.exports = {
     context: `${__dirname}/src`,
     entry: './app',
     output: {
-        path: `${__dirname}/src/dist`,
+        path: `${__dirname}/public/dist`,
         filename: 'scripts.js'
     },
 
     resolve: {
+        modulesDirectories: ['node_modules'],
+        extensions: ['', '.js'],
         alias: {
-            'npm': `${__dirname}/node_modules`
+            'services': `${__dirname}/src/services`
         }
     },
 
@@ -49,8 +51,14 @@ module.exports = {
             },
 
             {
+                test: /\.html$/,
+                loader: 'html'
+            },
+
+            {
                 test: /\.js$/,
                 loader: 'babel',
+                exclude: /\/node_modules\//,
                 query: {
                     presets: ['es2015'],
                 }
@@ -59,17 +67,24 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin('styles.css'),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
         new ngAnnotatePlugin({
             add: true
         }),
-        new cleanPlugin(['src/dist']),
+        new ExtractTextPlugin('styles.css'),
+        new cleanPlugin(['public/dist']),
     ]
+}
+
+if (NODE_ENV === 'production') {
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+                drop_console: true,
+                unsafe: true
+            }
+        })
+    );
 }
 
 
