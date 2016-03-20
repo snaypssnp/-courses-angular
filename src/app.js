@@ -4,30 +4,29 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 
-//css custom
+//my css
 import './assets/css/custom-styles.css';
 
-
+//Vendor
 import angular from 'angular';
 import AngularUiRouter from 'angular-ui-router';
 
-
-
-import UserList from './components/user-list';
+//My components
 import Dashboard from './components/dashboard';
-
+import UserList from './components/user-list';
+import UserEdit from './components/user-edit';
+import UserCreate from './components/user-create';
 import Services from './services';
-
 angular
     .module('app', [
         AngularUiRouter,
 
         Services.name,
-
         UserList.name,
-        Dashboard.name
+        UserEdit.name,
+        UserCreate.name,
+        Dashboard.name,
     ])
-    .run(function() {
+    .run(function () {
         console.log('app run');
-    })
-
+    });

@@ -3,7 +3,7 @@ import AngularUiRouter from 'angular-ui-router';
 
 import {DashboardComponent} from './dashboard.component.js';
 
-export default angular.module('app.dashboard', [])
+export default angular.module('app.dashboard', [AngularUiRouter])
     .component(DashboardComponent.selector, DashboardComponent)
     .config(config)
 ;

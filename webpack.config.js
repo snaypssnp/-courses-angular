@@ -19,7 +19,8 @@ module.exports = {
         modulesDirectories: ['node_modules'],
         extensions: ['', '.js'],
         alias: {
-            'services': `${__dirname}/src/services`
+            'services': `${__dirname}/src/services`,
+            'components': `${__dirname}/src/components`
         }
     },
 
