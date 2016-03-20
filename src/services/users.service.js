@@ -27,7 +27,7 @@ export default function UsersService(FIREBASE_URI, $firebaseArray) {
     }
 
     function add(user) {
-        list.$add(user).then((ref) => {
+        return list.$add(user).then((ref) => {
             let key = ref.key();
             let index = list.$indexFor(key);
             return list[index];
@@ -35,13 +35,13 @@ export default function UsersService(FIREBASE_URI, $firebaseArray) {
     }
 
     function remove(user) {
-        list.$remove(user).then((ref) => {
+        return list.$remove(user).then((ref) => {
             return user.$id;
         });
     }
 
     function update(index) {
-        list.$save(index).then((ref) => {
+        return list.$save(index).then((ref) => {
             return list[index];
         });
     }

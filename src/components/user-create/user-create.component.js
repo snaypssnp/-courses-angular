@@ -5,12 +5,16 @@ export let UserCreateComponent = {
     selector: 'userCreate',
     controller: class UserCreateCtrl {
         /* @ngInject */
-        constructor(UsersService) {
-            Object.assign(this, {UsersService});
+        constructor(UsersService, $state) {
+            Object.assign(this, {UsersService, $state});
         }
 
         addUser() {
-            this.UsersService.add(this.user);
+            this.UsersService
+                .add(this.user)
+                .then(() => {
+                   this.$state.go('users');
+                });
         }
     },
 

@@ -6,8 +6,8 @@ export let UserEditComponent = {
     controller: class UserEditCtrl {
 
         /* @ngInject */
-        constructor(UsersService, $stateParams) {
-            Object.assign(this, {UsersService, $stateParams});
+        constructor(UsersService, $stateParams, $state) {
+            Object.assign(this, {UsersService, $stateParams, $state});
 
             UsersService.getItem($stateParams.userId)
                 .then((result) => {
@@ -16,7 +16,11 @@ export let UserEditComponent = {
         }
 
         updateUser() {
-           this.UsersService.update(+this.$stateParams.userId);
+           this.UsersService
+               .update(+this.$stateParams.userId)
+               .then(() => {
+                   this.$state.go('users');
+               });
         }
     },
 };
