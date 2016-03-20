@@ -24,10 +24,16 @@ module.exports = {
         }
     },
 
+    resolveLoader: {
+        modulesDirectories: ['node_modules'],
+        moduleTemplates: ['*-loader', '*'],
+        extensions: ['', '.js']
+    },
+
     watch: NODE_ENV === 'development',
 
     watchOptions: {
-        aggregateTimeout: 100
+        aggregateTimeout: 300
     },
 
     devtool: NODE_ENV === 'development' ? 'cheap-module-inline-source-map' : null,
@@ -53,6 +59,7 @@ module.exports = {
 
             {
                 test: /\.html$/,
+                exclude: /\/node_modules\//,
                 loader: 'html'
             },
 

@@ -5,50 +5,46 @@
             </div>
             <div class="panel-body">
 
-                    <div class="alert alert-success" ng-if="!$ctrl.user">
-                        <strong>In progress...</strong>
+                <div class="alert alert-success" ng-if="!$ctrl.user">
+                    <strong>In progress...</strong>
+                </div>
+
+                <form role="form" ng-if="$ctrl.user">
+                    <div class="col-xs-6 form-group">
+                        <label>First Name</label>
+                        <input ng-model="$ctrl.user.firstName" class="form-control">
+                    </div>
+                    <div class="col-xs-6 form-group">
+                        <label>Last Name</label>
+                        <input ng-model="$ctrl.user.lastName" class="form-control">
                     </div>
 
-                    <form role="form" ng-if="$ctrl.user">
-                        <div class="col-xs-6 form-group">
-                            <label>First Name</label>
-                            <input ng-model="$ctrl.user.firstName" class="form-control">
-                        </div>
-                        <div class="col-xs-6 form-group">
-                            <label>Last Name</label>
-                            <input ng-model="$ctrl.user.lastName" class="form-control">
-                        </div>
+                    <div class="col-xs-6 form-group">
+                        <label>Email</label>
+                        <input ng-model="$ctrl.user.email" class="form-control">
+                    </div>
 
-                        <div class="col-xs-6 form-group">
-                            <label>Email</label>
-                            <input ng-model="$ctrl.user.email" class="form-control">
-                        </div>
+                    <div class="col-xs-6 form-group">
+                        <label>Gender</label>
+                        <select ng-model="$ctrl.user.gender" class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
 
-                        <div class="col-xs-6 form-group">
-                            <label>Gender</label>
-                            <select ng-model="$ctrl.user.gender" class="form-control">
-                                <option>Male</option>
-                                <option>Female</option>
-                            </select>
-                        </div>
-
-                        <div class="col-xs-6 form-group">
-                            <label>Address</label>
-                            <input ng-model="$ctrl.user.address" class="form-control">
-                        </div>
+                    <div class="col-xs-6 form-group">
+                        <label>Address</label>
+                        <input ng-model="$ctrl.user.address" class="form-control">
+                    </div>
 
 
-                        <div class="col-xs-12 form-group">
-                            <a ng-click="$ctrl.updateUser()" class="btn btn-success"><i class="fa fa-check"></i>Update</a>
-                            <a ui-sref="users" class="btn btn-danger"><i class="fa fa-close "></i> Cancel</a>
-                        </div>
+                    <div class="col-xs-12 form-group">
+                        <a ng-click="$ctrl.updateUser()" class="btn btn-success"><i class="fa fa-check"></i>Update</a>
+                        <a ui-sref="users" class="btn btn-danger"><i class="fa fa-close "></i> Cancel</a>
+                    </div>
 
-                    </form>
-
+                </form>
             </div>
-
         </div>
-
     </div>
-
 </div>

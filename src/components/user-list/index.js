@@ -3,6 +3,7 @@ import AngularUiRouter from 'angular-ui-router';
 
 import Services from 'services';
 import UserItem from 'components/user-item';
+console.log(UserItem.name)
 
 import {UserListComponent} from './user-list.component.js';
 
