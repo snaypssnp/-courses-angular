@@ -14,7 +14,7 @@ export default angular.module('app.messageList', [Services.name, MessageItem.nam
 /* @ngInject */
 function config ($stateProvider) {
     $stateProvider.state('messages', {
-        url: '/messages',
+        url: '/messages/:typeMessage',
         template: '<message-list></message-list>'
     });
 }

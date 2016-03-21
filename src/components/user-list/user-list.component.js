@@ -8,7 +8,6 @@ export let UserListComponent = {
         /* @ngInject */
         constructor(UsersService) {
             UsersService.getAll().then((result) => {
-                console.log('result', result);
                 this.users = result || [];
             });
         }

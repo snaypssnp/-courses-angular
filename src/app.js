@@ -36,6 +36,9 @@ angular
         MessageCreate.name,
         Breadcrumb.name
     ])
-    .run(function () {
-        console.log('app run');
-    });
+    .config(config);
+
+/* @ngInject */
+function config($urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+}

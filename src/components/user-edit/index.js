@@ -12,6 +12,5 @@ function config ($stateProvider) {
     $stateProvider.state('users-edit', {
         url: '/user/:userId',
         template: '<user-edit></user-edit>',
-
     });
 }
