@@ -19,6 +19,7 @@ import UserCreate from 'components/user-create';
 import MessageList from 'components/message-list';
 import MessageShow from 'components/message-show';
 import MessageCreate from 'components/message-create';
+import Breadcrumb from 'components/breadcrumb';
 import Services from 'services';
 
 angular
@@ -32,7 +33,8 @@ angular
         Dashboard.name,
         MessageList.name,
         MessageShow.name,
-        MessageCreate.name
+        MessageCreate.name,
+        Breadcrumb.name
     ])
     .run(function () {
         console.log('app run');
