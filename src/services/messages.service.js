@@ -13,9 +13,12 @@ export default function MessagesService(FIREBASE_URI, $firebaseArray) {
 
     ///////////
 
-    function getAll() {
+    function getAll(type) {
         return list.$loaded((result) => {
             return result;
+            //return result.filter((message) => {
+            //    return message.type === type;
+            //});
         });
     }
 
@@ -26,7 +29,6 @@ export default function MessagesService(FIREBASE_URI, $firebaseArray) {
     }
 
     function add(message) {
-        console.log('message: ', message);
         return list.$add(message).then((ref) => {
             let key = ref.key();
             let index = list.$indexFor(key);

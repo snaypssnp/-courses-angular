@@ -11,7 +11,7 @@
 
 </head>
 
-<body  ng-cloak>
+<body ng-cloak>
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header">
@@ -21,7 +21,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><i class="fa fa-envelope"></i> <strong>MAIL BOX</strong></a>
+            <a class="navbar-brand" href="/"><i class="fa fa-envelope"></i> <strong>MAIL BOX</strong></a>
         </div>
     </nav>
     <nav class="navbar-default navbar-side" role="navigation">
@@ -29,7 +29,7 @@
             <ul class="nav" id="main-menu">
 
                 <li ui-sref-active="active-menu">
-                    <a  ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a>
                 </li>
                 <li ui-sref-active="active-menu">
                     <a ui-sref="messages({typeMessage: 'inbox'})"><i class="fa fa-mail-reply"></i> Inbox</a>
@@ -50,7 +50,10 @@
     </nav>
     <div id="page-wrapper">
         <div id="page-inner">
+
             <breadcrumb></breadcrumb>
+
+            <loader></loader>
 
             <ui-view></ui-view>
 

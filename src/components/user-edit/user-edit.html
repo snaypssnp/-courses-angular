@@ -5,11 +5,7 @@
             </div>
             <div class="panel-body">
 
-                <div class="alert alert-success" ng-if="!$ctrl.user">
-                    <strong>In progress...</strong>
-                </div>
-
-                <form role="form" ng-if="$ctrl.user">
+                <form role="form">
                     <div class="col-xs-6 form-group">
                         <label>First Name</label>
                         <input ng-model="$ctrl.user.firstName" class="form-control">

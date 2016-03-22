@@ -14,7 +14,6 @@ export let UserItemComponent = {
     controller: class UserItemCtrl {
         /* @ngInject */
         constructor(UsersService) {
-            console.log('run user-ietm');
             Object.assign(this, {UsersService});
         }
 

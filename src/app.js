@@ -20,6 +20,7 @@ import MessageList from 'components/message-list';
 import MessageShow from 'components/message-show';
 import MessageCreate from 'components/message-create';
 import Breadcrumb from 'components/breadcrumb';
+import Loader from 'components/loader';
 import Services from 'services';
 
 angular
@@ -34,7 +35,8 @@ angular
         MessageList.name,
         MessageShow.name,
         MessageCreate.name,
-        Breadcrumb.name
+        Breadcrumb.name,
+        Loader.name
     ])
     .config(config);
 

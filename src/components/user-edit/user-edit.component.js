@@ -3,16 +3,14 @@ import template from './user-edit.html';
 export let UserEditComponent = {
     template,
     selector: 'userEdit',
+    bindings: {
+        user: '<'
+    },
     controller: class UserEditCtrl {
 
         /* @ngInject */
         constructor(UsersService, $stateParams, $state) {
             Object.assign(this, {UsersService, $stateParams, $state});
-
-            UsersService.getItem($stateParams.userId)
-                .then((result) => {
-                    this.user = result;
-                });
         }
 
         updateUser() {

@@ -3,7 +3,6 @@ import AngularUiRouter from 'angular-ui-router';
 
 import Services from 'services';
 import UserItem from 'components/user-item';
-console.log(UserItem.name)
 
 import {UserListComponent} from './user-list.component.js';
 
@@ -16,6 +15,17 @@ export default angular.module('app.userList', [UserItem.name])
 function config ($stateProvider) {
     $stateProvider.state('users', {
         url: '/users',
-        template: '<user-list></user-list>'
+        template: '<user-list users="$ctrl.users"></user-list>',
+        resolve: {
+            /* @ngInject */
+            users: function(UsersService) {
+                return UsersService.getAll();
+            }
+        },
+        /* @ngInject */
+        controller: function(users) {
+            this.users = users;
+        },
+        controllerAs: '$ctrl'
     });
 }

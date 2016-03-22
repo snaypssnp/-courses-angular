@@ -11,6 +11,17 @@ export default angular.module('app.userEdit', [])
 function config ($stateProvider) {
     $stateProvider.state('users-edit', {
         url: '/user/:userId',
-        template: '<user-edit></user-edit>',
+        template: '<user-edit user="$ctrl.user"></user-edit>',
+        resolve: {
+            /* @ngInject */
+            user: function($stateParams, UsersService) {
+                return UsersService.getItem($stateParams.userId);
+            }
+        },
+        /* @ngInject */
+        controller: function(user) {
+            this.user = user;
+        },
+        controllerAs: '$ctrl'
     });
 }

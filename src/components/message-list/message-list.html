@@ -2,9 +2,6 @@
     <div class="col-md-12">
         <div class="panel panel-default" >
             <div class="panel-body" >
-                <div class="alert alert-success" ng-if="!$ctrl.messages">
-                    <strong>In progress...</strong>
-                </div>
                 <div class="table-responsive" ng-if="$ctrl.messages">
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
@@ -17,7 +14,7 @@
                         <tbody>
                         <tr message-item message="message"
                             index="{{$index}}"
-                            ng-repeat="message in $ctrl.messages">
+                            ng-repeat="message in $ctrl.messages | filter: {type: $ctrl.typeMessage}">
                         </tr>
                         </tbody>
                     </table>

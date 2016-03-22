@@ -3,13 +3,22 @@ import template from './user-list.html';
 export let UserListComponent = {
     template,
     selector: 'userList',
+    bindings: {
+      users: '<'
+    },
     controller: class UserListCtrl {
+        constructor() {
+            this.predicate = 'firstName';
+            this.reverse  = true;
+        }
 
-        /* @ngInject */
-        constructor(UsersService) {
-            UsersService.getAll().then((result) => {
-                this.users = result || [];
-            });
+        order(predicate) {
+            if (this.predicate === predicate) {
+                this.reverse = !this.reverse;
+            } else {
+                this.predicate = predicate;
+                this.reverse = false;
+            }
         }
     },
 };

@@ -615,4 +615,9 @@ font-size: 19px;
 }
 }
 
+.app-loader {
+    text-align: center;
+    margin: 30px;
+}
+
 
