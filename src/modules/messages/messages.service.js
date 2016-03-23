@@ -14,7 +14,7 @@ export default class MessagesService {
     }
 
     getItem(index) {
-        return getAll().then((result) => {
+        return this.getAll().then((result) => {
             return result[index];
         })
     }

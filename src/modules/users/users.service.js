@@ -13,7 +13,7 @@ export default class UsersService {
     }
 
     getItem(index) {
-        return getAll().then((result) => {
+        return this.getAll().then((result) => {
             return result[index];
         })
     }

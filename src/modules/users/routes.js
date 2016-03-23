@@ -29,7 +29,6 @@ function routerConfig ($stateProvider) {
             },
             /* @ngInject */
             controller: function(user) {
-                console.log(user);
                 this.user = user;
             },
             controllerAs: '$ctrl'
