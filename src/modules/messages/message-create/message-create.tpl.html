@@ -36,7 +36,9 @@
                         </div>
 
                         <div class="col-xs-12 form-group">
-                            <button class="btn btn-success"><i class="fa fa-check"></i> Create</button>
+                            <button ng-disabled="formMessage.$invalid" class="btn btn-success">
+                                <i class="fa fa-check"></i> Create
+                            </button>
                         </div>
 
                         <div class="col-xs-12">
