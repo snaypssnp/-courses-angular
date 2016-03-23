@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/snaypssnp/-courses-angular#readme",
   "devDependencies": {
-    "angular": "^1.5.0",
+    "angular": "1.5.2",
     "angular-ui-router": "^0.2.18",
     "angularfire": "^1.1.4",
     "babel-core": "^6.7.2",

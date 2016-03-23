@@ -18,10 +18,6 @@ module.exports = {
     resolve: {
         modulesDirectories: ['node_modules'],
         extensions: ['', '.js'],
-        alias: {
-            'services': `${__dirname}/src/services`,
-            'components': `${__dirname}/src/components`
-        }
     },
 
     resolveLoader: {
