@@ -13,7 +13,6 @@
                         </thead>
                         <tbody>
                         <tr message-item message="message"
-                            index="{{$index}}"
                             ng-repeat="message in $ctrl.messages | filter: {type: $ctrl.typeMessage}">
                         </tr>
                         </tbody>

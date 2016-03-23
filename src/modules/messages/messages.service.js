@@ -9,6 +9,9 @@ export default class MessagesService {
 
     getAll(type) {
         return this._list.$loaded((result) => {
+            result.forEach((item, index) => {
+                item.index = index;
+            });
             return result;
         });
     }

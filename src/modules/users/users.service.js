@@ -8,6 +8,9 @@ export default class UsersService {
 
     getAll() {
         return this._list.$loaded((result) => {
+            result.forEach((item, index) => {
+                item.index = index;
+            });
             return result;
         });
     }

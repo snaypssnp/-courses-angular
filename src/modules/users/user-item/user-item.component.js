@@ -7,7 +7,6 @@ export let UserItemComponent = {
     scope: {},
     bindToController: {
         user: '<',
-        index: '@'
     },
     restrict: 'A',
 

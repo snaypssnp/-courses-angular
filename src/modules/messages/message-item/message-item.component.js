@@ -6,8 +6,7 @@ export let MessageItemComponent = {
     controllerAs: '$ctrl',
     scope: {},
     bindToController: {
-        message: '=',
-        index: '@'
+        message: '<',
     },
     restrict: 'A',
 
