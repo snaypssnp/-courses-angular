@@ -6,32 +6,64 @@
             <div class="panel-body">
                 <div class="row">
 
-                    <form role="form">
-                        <div class="col-xs-6 form-group">
+                    <form name="formMessage" role="form" ng-submit="$ctrl.addMessage()">
+                        <div class="col-xs-6 form-group"
+                             ng-class="{'has-error' : formMessage.subject.$invalid && formMessage.subject.$dirty}">
                             <label>Subject</label>
-                            <input ng-model="$ctrl.message.subject" class="form-control">
+                            <input name="subject" ng-model="$ctrl.message.subject" class="form-control" required ng-minlength="5">
                         </div>
-                        <div class="col-xs-6 form-group">
+                        <div class="col-xs-6 form-group"
+                             ng-class="{'has-error' : formMessage.email.$invalid && formMessage.email.$dirty}">
                             <label>Email</label>
-                            <input ng-model="$ctrl.message.email" class="form-control">
+                            <input type="email" name="email" ng-model="$ctrl.message.email" class="form-control" required>
                         </div>
 
-                        <div class="col-xs-12 form-group">
+                        <div class="col-xs-12 form-group"
+                             ng-class="{ 'has-error' : formMessage.type.$invalid && formMessage.type.$dirty }">
                             <label>Type</label>
-                            <select ng-model="$ctrl.message.type" class="form-control">
+                            <select name="type" ng-model="$ctrl.message.type" class="form-control" required>
+                                <option value=""></option>
                                 <option value="inbox">Inbox</option>
                                 <option value="outbox">Outbox</option>
                             </select>
                         </div>
 
-                        <div class="col-xs-12 form-group">
+                        <div class="col-xs-12 form-group"
+                             ng-class="{ 'has-error': formMessage.text.$invalid && formMessage.text.$dirty }">
                             <label>Text</label>
-                            <textarea ng-model="$ctrl.message.text" class="form-control" rows="5"></textarea>
+                            <textarea name="text" ng-model="$ctrl.message.text" class="form-control" rows="5"
+                                      required ng-minlength="10"></textarea>
                         </div>
 
                         <div class="col-xs-12 form-group">
-                            <a ng-click="$ctrl.addMessage()" class="btn btn-success"><i class="fa fa-check"></i> Create</a>
-                            <a class="btn btn-danger"><i class="fa fa-close "></i> Cancel</a>
+                            <button class="btn btn-success"><i class="fa fa-check"></i> Create</button>
+                        </div>
+
+                        <div class="col-xs-12">
+
+                            <div class="alert alert-danger" ng-messages="formMessage.subject.$error"
+                                 ng-if="formMessage.subject.$invalid && formMessage.subject.$dirty">
+                                <div ng-message="required">Please enter a value for Subject.</div>
+                                <div ng-message="minlength">First Name can be at least 5 characters long.</div>
+                            </div>
+
+                            <div class="alert alert-danger" ng-messages="formMessage.email.$error"
+                                 ng-if="formMessage.email.$invalid && formMessage.email.$dirty">
+                                <div ng-message="required">You did not enter your email address.</div>
+                                <div ng-message="email">Your email address doesn't valid.</div>
+                            </div>
+
+                            <div class="alert alert-danger" ng-messages="formMessage.type.$error"
+                                 ng-if="formMessage.type.$invalid && formMessage.type.$dirty">
+                                <div ng-message="required">Please enter a value for Type.</div>
+                            </div>
+
+                            <div class="alert alert-danger" ng-messages="formMessage.text.$error"
+                                 ng-if="formMessage.text.$invalid && formMessage.text.$dirty">
+                                <div ng-message="required">Please enter a value for Text.</div>
+                                <div ng-message="minlength">Text can be at least 10 characters long.</div>
+                            </div>
+
                         </div>
 
                     </form>

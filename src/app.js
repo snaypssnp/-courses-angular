@@ -7,6 +7,7 @@ import './assets/css/custom-styles.css';
 
 import angular from 'angular';
 import AngularUiRouter from 'angular-ui-router';
+import AngularMessages from 'angular-messages';
 import Firebase from 'firebase';
 import AngularFire from 'angularfire';
 
@@ -18,6 +19,7 @@ import GeneralModule from './modules/general';
 angular
     .module('app', [
         AngularUiRouter,
+        AngularMessages,
         AngularFire,
 
         DashboardModule.name,

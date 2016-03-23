@@ -4,43 +4,87 @@
             <div class="panel-heading">
             </div>
             <div class="panel-body">
+                <div class="row">
 
-                <form role="form">
-                    <div class="col-xs-6 form-group">
-                        <label>First Name</label>
-                        <input ng-model="$ctrl.user.firstName" class="form-control">
-                    </div>
-                    <div class="col-xs-6 form-group">
-                        <label>Last Name</label>
-                        <input ng-model="$ctrl.user.lastName" class="form-control">
-                    </div>
+                    <form name="formUser" role="form" ng-submit="$ctrl.updateUser()">
+                        <div class="col-xs-6 form-group"
+                             ng-class="{ 'has-error' : formUser.firstName.$invalid && formUser.firstName.$dirty }">
+                            <label>First Name</label>
+                            <input name="firstName" ng-model="$ctrl.user.firstName" class="form-control" required ng-minlength="5">
+                        </div>
+                        <div class="col-xs-6 form-group"
+                             ng-class="{ 'has-error' : formUser.lastName.$invalid && formUser.lastName.$dirty }">
+                            <label>Last Name</label>
+                            <input name="lastName" ng-model="$ctrl.user.lastName" class="form-control" required ng-minlength="5">
+                        </div>
 
-                    <div class="col-xs-6 form-group">
-                        <label>Email</label>
-                        <input ng-model="$ctrl.user.email" class="form-control">
-                    </div>
+                        <div class="col-xs-6 form-group"
+                             ng-class="{ 'has-error' : formUser.email.$invalid && formUser.email.$dirty }">
+                            <label>Email</label>
+                            <input type="email" name="email" ng-model="$ctrl.user.email" class="form-control" required>
+                        </div>
 
-                    <div class="col-xs-6 form-group">
-                        <label>Gender</label>
-                        <select ng-model="$ctrl.user.gender" class="form-control">
-                            <option>Male</option>
-                            <option>Female</option>
-                        </select>
-                    </div>
+                        <div class="col-xs-6 form-group"
+                             ng-class="{ 'has-error' : formUser.gender.$invalid && formUser.gender.$dirty }">
+                            <label>Gender</label>
+                            <select name="gender" ng-model="$ctrl.user.gender" class="form-control" required>
+                                <option value=""></option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
 
-                    <div class="col-xs-6 form-group">
-                        <label>Address</label>
-                        <input ng-model="$ctrl.user.address" class="form-control">
-                    </div>
+                        <div class="col-xs-6 form-group"
+                             ng-class="{ 'has-error' : formUser.address.$invalid && formUser.address.$dirty }">
+                            <label>Address</label>
+                            <input name="address" ng-model="$ctrl.user.address" class="form-control" required ng-minlength="10">
+                        </div>
 
 
-                    <div class="col-xs-12 form-group">
-                        <a ng-click="$ctrl.updateUser()" class="btn btn-success"><i class="fa fa-check"></i>Update</a>
-                        <a ui-sref="users" class="btn btn-danger"><i class="fa fa-close "></i> Cancel</a>
-                    </div>
+                        <div class="col-xs-12 form-group">
+                            <button ng-disabled="formUser.$invalid" class="btn btn-success">
+                                <i class="fa fa-check"></i> Update
+                            </button>
+                        </div>
 
-                </form>
+                        <div class="col-xs-12">
+                            <div class="alert alert-danger" ng-messages="formUser.firstName.$error"
+                                 ng-if="formUser.firstName.$invalid && formUser.firstName.$dirty">
+                                <div ng-message="required">Please enter a value for First Name.</div>
+                                <div ng-message="minlength">First Name can be at least 5 characters long.</div>
+                            </div>
+
+                            <div class="alert alert-danger" ng-messages="formUser.lastName.$error"
+                                 ng-if="formUser.lastName.$invalid && formUser.lastName.$dirty">
+                                <div ng-message="required">Please enter a value for Last Name.</div>
+                                <div ng-message="minlength">Last Name can be at least 5 characters long.</div>
+                            </div>
+
+                            <div class="alert alert-danger" ng-messages="formUser.email.$error"
+                                 ng-if="formUser.email.$invalid && formUser.email.$dirty">
+                                <div ng-message="required">You did not enter your email address.</div>
+                                <div ng-message="email">Your email address doesn't valid.</div>
+                            </div>
+
+                            <div class="alert alert-danger" ng-messages="formUser.gender.$error"
+                                 ng-if="formUser.gender.$invalid && formUser.gender.$dirty">
+                                <div ng-message="required">Please enter a value for Gender.</div>
+                            </div>
+
+                            <div class="alert alert-danger" ng-messages="formUser.address.$error"
+                                 ng-if="formUser.address.$invalid && formUser.address.$dirty">
+                                <div ng-message="required">Please enter a value for Address.</div>
+                                <div ng-message="minlength">Address can be at least 10 characters long.</div>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
             </div>
+
         </div>
+
     </div>
+
 </div>
