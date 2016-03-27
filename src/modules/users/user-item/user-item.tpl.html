@@ -1,9 +1,9 @@
 <td>{{$ctrl.user.firstName}}</td>
 <td>{{$ctrl.user.lastName}}</td>
 <td>{{$ctrl.user.email}}</td>
-<td>{{$ctrl.user.gender}} {{$ctrl.user.index}}</td>
+<td>{{$ctrl.user.gender}}</td>
 <td class="center">
-    <a ui-sref="users-edit({userId: $ctrl.user.index})" class="btn btn-info btn-sm">
+    <a ui-sref="users.edit({userId: $ctrl.user.index})" class="btn btn-info btn-sm">
         <i class="fa fa-edit"></i>
     </a>
     <button ng-click="$ctrl.removeUser($ctrl.user)" class="btn btn-warning btn-sm">

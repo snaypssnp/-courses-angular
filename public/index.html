@@ -28,20 +28,20 @@
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
 
-                <li ui-sref-active="active-menu">
+                <li  ui-sref-active="active-menu">
                     <a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a>
                 </li>
                 <li ui-sref-active="active-menu">
-                    <a ui-sref="messages({typeMessage: 'inbox'})"><i class="fa fa-mail-reply"></i> Inbox</a>
+                    <a ui-sref="messages.list({typeMessage: 'inbox'})"><i class="fa fa-mail-reply"></i> Inbox</a>
                 </li>
                 <li ui-sref-active="active-menu">
-                    <a ui-sref="messages({typeMessage: 'outbox'})"><i class="fa fa-mail-forward"></i> Outbox</a>
+                    <a ui-sref="messages.list({typeMessage: 'outbox'})"><i class="fa fa-mail-forward"></i> Outbox</a>
+                </li>
+                <li ui-sref-nested="active-menu" ui-sref-active="active-menu">
+                    <a ui-sref="users.list" ><i class="fa fa-users"></i>Users</a>
                 </li>
                 <li ui-sref-active="active-menu">
-                    <a ui-sref="users" ><i class="fa fa-users"></i>Users</a>
-                </li>
-                <li ui-sref-active="active-menu">
-                    <a ui-sref="message-create"><i class="fa fa-comment"></i>New Message</a>
+                    <a ui-sref="messages.create"><i class="fa fa-comment"></i>New Message</a>
                 </li>
             </ul>
 
@@ -55,7 +55,7 @@
 
             <loader></loader>
 
-            <ui-view></ui-view>
+            <ui-view id="main-view"></ui-view>
 
             <footer></footer>
         </div>

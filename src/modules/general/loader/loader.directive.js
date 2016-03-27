@@ -10,12 +10,13 @@ function directive ($rootScope)  {
         link: function (scope) {
             $rootScope.$on('$stateChangeStart', () => {
                 scope.show = true;
-                angular.element(document.querySelector('ui-view')).html('');
+                angular.element(document.querySelector('#main-view')).css('display', 'none');
             });
 
             $rootScope.$on('$stateChangeSuccess', () => {
                 scope.show = false;
-            })
+                angular.element(document.querySelector('#main-view')).css('display', 'block');
+            });
         }
     }
 };

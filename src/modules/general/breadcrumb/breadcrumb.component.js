@@ -8,7 +8,7 @@ export let BreadcrumbComponent = {
         /* @ngInject */
         constructor($rootScope) {
             $rootScope.$on('$stateChangeStart', (event, toState) => {
-                this.title = toState.name.split('-').join(' ');
+                this.title = toState.name.split('.').join(' ');
             });
         }
     },

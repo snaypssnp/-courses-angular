@@ -6,7 +6,6 @@ export default class MessagesService {
         this._list = $firebaseArray(ref);
     }
 
-
     getAll(type) {
         return this._list.$loaded((result) => {
             result.forEach((item, index) => {

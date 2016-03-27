@@ -17,7 +17,7 @@ export let UserEditComponent = {
            this.UsersService
                .update(this.$stateParams.userId)
                .then(() => {
-                   this.$state.go('users');
+                   this.$state.go('users.list');
                });
         }
     },

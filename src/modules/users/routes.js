@@ -3,7 +3,13 @@ function routerConfig ($stateProvider) {
     $stateProvider
 
         .state('users', {
+            abstract: true,
             url: '/users',
+            template: '<ui-view/>',
+        })
+
+        .state('users.list', {
+            url: '/list',
             template: '<user-list users="$ctrl.users"></user-list>',
             resolve: {
                 /* @ngInject */
@@ -18,8 +24,8 @@ function routerConfig ($stateProvider) {
             controllerAs: '$ctrl'
         })
 
-        .state('users-edit', {
-            url: '/user/{userId:int}',
+        .state('users.edit', {
+            url: '/edit/{userId:int}',
             template: '<user-edit user="$ctrl.user"></user-edit>',
             resolve: {
                 /* @ngInject */
@@ -34,8 +40,8 @@ function routerConfig ($stateProvider) {
             controllerAs: '$ctrl'
         })
 
-        .state('users-create', {
-            url: '/create/user',
+        .state('users.create', {
+            url: '/create',
             template: '<user-create></user-create>'
         })
 }

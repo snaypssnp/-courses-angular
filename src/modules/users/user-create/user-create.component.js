@@ -13,7 +13,7 @@ export let UserCreateComponent = {
             this.UsersService
                 .add(this.user)
                 .then(() => {
-                   this.$state.go('users');
+                   this.$state.go('users.list');
                 });
         }
     },

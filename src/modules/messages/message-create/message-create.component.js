@@ -13,7 +13,7 @@ export let MessageCreateComponent = {
             this.MessagesService
                 .add(this.message)
                 .then(() => {
-                    this.$state.go('messages', {typeMessage: this.message.type});
+                    this.$state.go('messages.list', {typeMessage: this.message.type});
                 });
         }
     },
