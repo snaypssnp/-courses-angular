@@ -29,7 +29,7 @@ module.exports = {
     watch: NODE_ENV === 'development',
 
     watchOptions: {
-        aggregateTimeout: 300
+        aggregateTimeout: 100
     },
 
     devtool: NODE_ENV === 'development' ? 'cheap-module-inline-source-map' : null,
@@ -67,19 +67,26 @@ module.exports = {
                     presets: ['es2015'],
                 }
             }
+        ],
+        noParse: [
+            /angular\/angular.js/,
         ]
     },
 
     plugins: [
-        new ngAnnotatePlugin({
-            add: true
-        }),
         new ExtractTextPlugin('styles.css'),
         new cleanPlugin(['public/dist']),
     ]
 }
 
 if (NODE_ENV === 'production') {
+
+    module.exports.plugins.push(
+        new ngAnnotatePlugin({
+            add: true
+        })
+    );
+
     module.exports.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             compress: {

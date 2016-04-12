@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.1/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <style>
+        a[ui-sref] {
+            cursor: pointer;
+            color: blue;
+        }
+    </style>
+    <script>
+
+        (function() {
+
+            angular.module('app', ['ui.router'])
+                .config(function($stateProvider) {
+                    $stateProvider
+                        .state('one-page', {
+                            url: '/one-page',
+                            template: '<h1>Page One</h1>'
+                        })
+                        .state('two-page', {
+                            url: '/two-page',
+                            template: '<h1>Page Two</h1>'
+                        })
+                        .state('three-page', {
+                            url: '/three-page',
+                            template: '<h1>Page Three</h1>'
+                        })
+                });
+
+
+            document.addEventListener("DOMContentLoaded", ready);
+
+            function ready() {
+                var uiViewElement = document.querySelector('ui-view');
+                var listLinkElements = document.querySelectorAll('[ui-my-sref]');
+                if (!uiViewElement || !listLinkElements.length) {
+                    return;
+                }
+
+                var $stateAngular = angular.element(uiViewElement).injector().get('$state');
+                var listStatesAngular = $stateAngular.get().filter(function(item) {
+                    return !item.abstract;
+                });
+                if (!listStatesAngular.length) {
+                    return;
+                }
+
+                Array.prototype.forEach.call(listLinkElements, function(element) {
+                    setHref(element);
+
+                    //тут можно обойтись и без обработчика события click
+                    addEventClick(element);
+                });
+
+                function addEventClick(elem) {
+                    elem.addEventListener("click" , function(e) {
+                        e.preventDefault();
+                        $stateAngular.go(elem.getAttribute('ui-my-sref'));
+                    });
+                }
+
+                function setHref(elem) {
+                    var currentState = listStatesAngular.filter(function(item) {
+                        return item.name === elem.getAttribute('ui-my-sref');
+                    });
+                    if (!currentState.length) {
+                        return;
+                    }
+
+                    elem.setAttribute('href', '#' + currentState[0].url);
+                }
+            }
+        })();
+    </script>
+</head>
+<body ng-app="app">
+    <ul>
+        <li>
+            <a ui-my-sref="one-page">One</a>
+        </li>
+        <li>
+            <a ui-my-sref="two-page">Two</a>
+        </li>
+        <li>
+            <a ui-my-sref="three-page">Three</a>
+        </li>
+
+    </ul>
+    <ui-view></ui-view>
+</body>
+</html>

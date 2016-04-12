@@ -22,6 +22,7 @@ angular
         AngularMessages,
         AngularFire,
 
+        //test
         DashboardModule.name,
         GeneralModule.name,
         UsersModule.name,
