@@ -1,46 +1,14 @@
+<navbar-top></navbar-top>
 
-    <nav class="navbar navbar-default top-navbar" role="navigation">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/"><i class="fa fa-envelope"></i> <strong>MAIL BOX</strong></a>
-        </div>
-    </nav>
-    <nav class="navbar-default navbar-side" role="navigation">
-        <div class="sidebar-collapse">
-            <ul class="nav" id="main-menu">
+<navbar-side></navbar-side>
 
-                <li  ui-sref-active="active-menu">
-                    <a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a>
-                </li>
-                <li ui-sref-active="active-menu">
-                    <a ui-sref="messages.list({typeMessage: 'inbox'})"><i class="fa fa-mail-reply"></i> Inbox</a>
-                </li>
-                <li ui-sref-active="active-menu">
-                    <a ui-sref="messages.list({typeMessage: 'outbox'})"><i class="fa fa-mail-forward"></i> Outbox</a>
-                </li>
-                <li ui-sref-nested="active-menu" ui-sref-active="active-menu">
-                    <a ui-sref="users.list" ><i class="fa fa-users"></i>Users</a>
-                </li>
-                <li ui-sref-active="active-menu">
-                    <a ui-sref="messages.create"><i class="fa fa-comment"></i>New Message</a>
-                </li>
-            </ul>
+<div id="page-wrapper">
+    <div id="page-inner">
+        <breadcrumb></breadcrumb>
 
-        </div>
+        <ui-view></ui-view>
 
-    </nav>
-    <div id="page-wrapper">
-        <div id="page-inner">
-            <breadcrumb></breadcrumb>
-
-            <ui-view></ui-view>
-
-            <footer></footer>
-        </div>
+        <footer></footer>
     </div>
+</div>
 

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Dashboard",
+    "link": "dashboard",
+    "icon": "fa-dashboard"
+  },
+  {
+    "title": "Inbox",
+    "link": "messages.list({typeMessage: 'inbox'})",
+    "icon": "fa-mail-reply"
+  },
+  {
+    "title": "Outbox",
+    "link": "messages.list({typeMessage: 'outbox'})",
+    "icon": "fa-mail-forward"
+  },
+  {
+    "title": "Users",
+    "link": "users.list",
+    "icon": "fa-users"
+  },
+  {
+    "title": "New Message",
+    "link": "messages.create",
+    "icon": "fa-comment"
+  },
+  {
+    "title": "Login",
+    "link": "auth.login",
+    "icon": "fa-comment"
+  }
+]

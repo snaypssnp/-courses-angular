@@ -9,6 +9,6 @@ import {DashboardComponent} from './dashboard.component';
 
 export default angular.module('app.dashboard', [])
     .component(DashboardComponent.selector, DashboardComponent)
-    .factory('MessagesService', MessagesService)
-    .factory('UsersService', UsersService)
+    .service('MessagesService', MessagesService)
+    .service('UsersService', UsersService)
     .config(routerConfig);

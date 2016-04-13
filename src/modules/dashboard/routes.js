@@ -23,7 +23,8 @@ function routerConfig ($stateProvider) {
         controller: function(users, messages) {
             Object.assign(this, {users, messages});
         },
-        controllerAs: '$ctrl'
+        controllerAs: '$ctrl',
+        authenticate: true
     });
 }
 

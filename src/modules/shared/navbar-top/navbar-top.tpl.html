@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default top-navbar" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/"><i class="fa fa-envelope"></i> <strong>MAIL BOX</strong></a>
+    </div>
+    <ul class="nav navbar-top-links navbar-right">
+        <li class="dropdown open" ng-repeat="parentItem in $ctrl.items">
+            <a class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-fw" ng-class="parentItem.icon"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li navbar-item item="item" ng-repeat="item in parentItem.items" ></li>
+            </ul>
+        </li>
+    </ul>
+</nav>

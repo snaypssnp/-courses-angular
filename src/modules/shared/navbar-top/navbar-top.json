@@ -1,0 +1,23 @@
+[
+  {
+    "icon" : "fa-user",
+    "items" : [
+      {
+        "title": "User Profile",
+        "link": "auth.login",
+        "icon": "fa-user"
+      },
+      {
+        "title": "Settings",
+        "link": "auth.login",
+        "icon": "fa-gear"
+      },
+      {
+        "title": "Logout",
+        "link": "auth.login",
+        "icon": "fa-sign-out"
+      }
+    ]
+  }
+
+]
