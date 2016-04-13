@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import MessagesService from './messages.service';
+import MessagesService from 'services/messages.service';
 import routerConfig from './routes';
 
 import {MessageListComponent} from './message-list/message-list.component';

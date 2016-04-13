@@ -16,6 +16,9 @@ module.exports = {
     },
 
     resolve: {
+        alias: {
+            services: `${__dirname}/src/modules/services`
+        },
         modulesDirectories: ['node_modules'],
         extensions: ['', '.js'],
     },

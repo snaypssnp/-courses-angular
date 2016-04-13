@@ -14,7 +14,9 @@ import AngularFire from 'angularfire';
 import DashboardModule from './modules/dashboard';
 import UsersModule from './modules/users';
 import MessagesModule from './modules/messages';
-import GeneralModule from './modules/general';
+import SharedModule from './modules/shared';
+
+import configRoutes from './app.routes.js';
 
 angular
     .module('app', [
@@ -22,16 +24,10 @@ angular
         AngularMessages,
         AngularFire,
 
-        //test
         DashboardModule.name,
-        GeneralModule.name,
+        SharedModule.name,
         UsersModule.name,
         MessagesModule.name
     ])
     .constant('FIREBASE_URI', 'https://snayps.firebaseio.com/')
-    .config(config);
-
-/* @ngInject */
-function config($urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
-}
+    .config(configRoutes);

@@ -1,10 +1,11 @@
 /* @ngInject */
 function routerConfig ($stateProvider) {
     $stateProvider.state('dashboard', {
-        url: '/',
+        url: '/dashboard',
         template: `<dashboard users="$ctrl.users"
                               messages="$ctrl.messages">
                    </dashboard>`,
+        parent: 'main',
         resolve: {
 
             /* @ngInject */

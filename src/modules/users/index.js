@@ -1,5 +1,5 @@
 import angular from 'angular';
-import UsersService from './users.service';
+import UsersService from 'services/users.service';
 import routerConfig from './routes.js';
 
 import {UserListComponent} from './user-list/user-list.component';

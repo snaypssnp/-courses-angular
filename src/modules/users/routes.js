@@ -6,6 +6,7 @@ function routerConfig ($stateProvider) {
             abstract: true,
             url: '/users',
             template: '<ui-view/>',
+            parent: 'main'
         })
 
         .state('users.list', {

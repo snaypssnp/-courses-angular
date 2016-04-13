@@ -1,8 +1,8 @@
 import angular from 'angular';
 import AngularUiRouter from 'angular-ui-router';
 
-import MessagesService from '../messages/messages.service';
-import UsersService from '../users/users.service';
+import MessagesService from 'services/messages.service';
+import UsersService from 'services/users.service';
 import routerConfig from './routes';
 
 import {DashboardComponent} from './dashboard.component';

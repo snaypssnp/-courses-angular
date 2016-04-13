@@ -4,7 +4,8 @@ function routerConfig ($stateProvider) {
         .state('messages', {
             abstract: true,
             url: '/messages',
-            template: '<ui-view />'
+            template: '<ui-view />',
+            parent: 'main'
         })
 
         .state('messages.list', {
