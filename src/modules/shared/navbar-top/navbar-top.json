@@ -1,18 +1,40 @@
 [
+
+  {
+    "icon" : "fa-envelope",
+    "items" : [
+      {
+        "title": "Inbox",
+        "link": "messages.list({typeMessage: 'inbox'})",
+        "icon": "fa-mail-reply"
+      },
+      {
+        "divider": true,
+        "title": "Outbox",
+        "link": "messages.list({typeMessage: 'outbox'})",
+        "icon": "fa-mail-forward"
+      },
+
+      {
+        "divider": true,
+        "title": "New Message",
+        "link": "messages.create",
+        "icon": "fa-comment"
+      }
+
+    ]
+  },
+
   {
     "icon" : "fa-user",
     "items" : [
       {
-        "title": "User Profile",
-        "link": "auth.login",
-        "icon": "fa-user"
+        "title": "Users",
+        "link": "users.list",
+        "icon": "fa-users"
       },
       {
-        "title": "Settings",
-        "link": "auth.login",
-        "icon": "fa-gear"
-      },
-      {
+        "divider": true,
         "title": "Logout",
         "link": "auth.login",
         "icon": "fa-sign-out"

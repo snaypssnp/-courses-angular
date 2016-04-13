@@ -85,17 +85,13 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('styles.css'),
         new cleanPlugin(['public/dist']),
+        new ngAnnotatePlugin({
+            add: true
+        })
     ]
 }
 
 if (NODE_ENV === 'production') {
-
-    module.exports.plugins.push(
-        new ngAnnotatePlugin({
-            add: true
-        })
-    );
-
     module.exports.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             compress: {

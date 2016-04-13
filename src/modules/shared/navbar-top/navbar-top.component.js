@@ -7,6 +7,15 @@ export let NavbarTopComponent = {
     controller: class {
         constructor () {
             this.items = items;
+            this.curParentItem = null;
+        }
+
+        selectParentItem(parentItem) {
+            if (this.curParentItem !== parentItem) {
+                this.curParentItem = parentItem;
+            } else {
+                this.curParentItem = null;
+            }
         }
     }
 };

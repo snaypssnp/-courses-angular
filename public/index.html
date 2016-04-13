@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--ng-strict-di-->
-<html ng-app="app">
+<html ng-app="app" ng-strict-di>
 
 <head>
     <meta charset="utf-8" />
@@ -13,13 +12,13 @@
 </head>
 
 <body ng-cloak>
-<div id="wrapper">
+    <div id="wrapper">
 
-    <loader></loader>
+        <loader></loader>
 
-    <ui-view id="main-view"></ui-view>
-</div>
-<script src="./dist/scripts.js"></script>
+        <ui-view id="main-view"></ui-view>
+    </div>
+    <script src="./dist/scripts.js"></script>
 </body>
 
 </html>
