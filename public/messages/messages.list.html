@@ -1,8 +1,0 @@
-<hr/>
-<h1>Список сообщений</h1>
-<ul>
-    <li ng-repeat="message in $ctrl.messages  | filter: {type: $ctrl.messageType}">
-        <a ui-sref="messages.detail({messageId: message.id})">{{message.subject}}</a>
-    </li>
-</ul>
-<ui-view></ui-view>
