@@ -6,7 +6,6 @@ function routerConfig ($stateProvider) {
             url: '/messages',
             template: '<ui-view />',
             parent: 'main',
-            authenticate: true
         })
 
         .state('messages.list', {
@@ -24,6 +23,7 @@ function routerConfig ($stateProvider) {
                 this.messages = messages;
             },
             controllerAs: '$ctrl',
+            authenticate: true
         })
 
         .state('messages.show', {
@@ -39,13 +39,14 @@ function routerConfig ($stateProvider) {
             controller: function(message) {
                 this.message = message;
             },
-            controllerAs: '$ctrl'
+            controllerAs: '$ctrl',
+            authenticate: true
         })
 
         .state('messages.create', {
             url: '/create',
             template: '<message-create></message-create>',
-
+            authenticate: true
         })
 }
 

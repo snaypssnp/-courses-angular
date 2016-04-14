@@ -1,5 +1,4 @@
 [
-
   {
     "icon" : "fa-envelope",
     "items" : [
@@ -21,7 +20,6 @@
         "link": "messages.create",
         "icon": "fa-comment"
       }
-
     ]
   },
 
@@ -36,7 +34,7 @@
       {
         "divider": true,
         "title": "Logout",
-        "link": "auth.login",
+        "link": "auth.logout",
         "icon": "fa-sign-out"
       }
     ]

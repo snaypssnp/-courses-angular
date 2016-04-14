@@ -23,10 +23,5 @@
     "title": "New Message",
     "link": "messages.create",
     "icon": "fa-comment"
-  },
-  {
-    "title": "Login",
-    "link": "auth.login",
-    "icon": "fa-comment"
   }
 ]

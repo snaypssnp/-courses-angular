@@ -22,7 +22,8 @@ function routerConfig ($stateProvider) {
             controller: function(users) {
                 this.users = users;
             },
-            controllerAs: '$ctrl'
+            controllerAs: '$ctrl',
+            authenticate: true
         })
 
         .state('users.edit', {
@@ -38,12 +39,14 @@ function routerConfig ($stateProvider) {
             controller: function(user) {
                 this.user = user;
             },
-            controllerAs: '$ctrl'
+            controllerAs: '$ctrl',
+            authenticate: true
         })
 
         .state('users.create', {
             url: '/create',
-            template: '<user-create></user-create>'
+            template: '<user-create></user-create>',
+            authenticate: true
         })
 }
 
