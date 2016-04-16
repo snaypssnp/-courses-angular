@@ -1,11 +1,11 @@
 'use strict';
-
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 
 import './assets/css/custom-styles.css';
 
 import angular from 'angular';
+
 import AngularUiRouter from 'angular-ui-router';
 import AngularMessages from 'angular-messages';
 import Firebase from 'firebase';

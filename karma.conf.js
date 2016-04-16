@@ -1,16 +1,24 @@
-// Karma configuration
-// Generated on Thu Apr 14 2016 16:15:02 GMT+0300 (MSK)
-var webpackConfig = require('./webpack.config.js');
-var path = require('path');
-var entry = path.resolve(webpackConfig.entry);
-var preprocessors = {};
-preprocessors[entry] = 'webpack';
+'use strict';
+const path = require('path');
+
+const _ = require('lodash');
+const here = require('path-here');
+
+const webpackConfig = require('./webpack.config.js');
+const entry = path.resolve(webpackConfig.context, webpackConfig.entry);
+
+let preprocessors = {};
+preprocessors[entry] = ['webpack'];
+
+let isCoverage = process.env.COVERAGE === 'true';
+
+if (isCoverage) {
+    console.log('-- recording coverage --');
+}
 
 module.exports = function (config) {
     config.set({
-
-        // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '',
+        basePath: './',
 
 
         // frameworks to use
@@ -22,6 +30,20 @@ module.exports = function (config) {
         files: [
             entry,
         ],
+
+        webpack: webpackConfig,
+
+        webpackServer: {
+            noInfo: true // Suppress all webpack messages, except errors
+        },
+
+        coverageReporter: {
+            reporters: [
+                {type: 'lcov', dir: 'coverage/', subdir: '.'},
+                {type: 'json', dir: 'coverage/', subdir: '.'},
+                {type: 'text-summary'}
+            ]
+        },
 
 
         // list of files to exclude
@@ -36,7 +58,7 @@ module.exports = function (config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        reporters: getReporters(),
 
 
         // web server port
@@ -70,9 +92,18 @@ module.exports = function (config) {
         concurrency: Infinity,
 
         plugin: [
-            require('karma-webpack'),
+            'karma-webpack',
             'karma-jasmine',
             'karma-chrome-launcher',
+            'karma-coverage'
         ]
     })
+};
+
+function getReporters() {
+    var reps = ['progress'];
+    if (isCoverage) {
+        reps.push('coverage');
+    }
+    return reps;
 }
