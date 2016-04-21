@@ -7,7 +7,23 @@
         </div>
         <div class="panel-body">
           <div class="row">
+
             <div class="col-lg-12">
+              <form name="formLogin" class="form-signin" ng-submit="$ctrl.login()">
+                <div class="form-group">
+                  <input type="text" ng-model="$ctrl.email" class="form-control" placeholder="Email address" required>
+                </div>
+                <div class="form-group">
+                  <input type="password" ng-model="$ctrl.password" class="form-control" placeholder="Password"
+                         required="">
+                </div>
+                <button
+                        type="submit"
+                        class="btn btn-lg btn-info btn-block">Sign in
+                </button>
+              </form>
+
+              <br/>
               <loader show="$ctrl.progressAuth"></loader>
 
               <div class="alert alert-danger" role="alert" ng-if="$ctrl.error && !$ctrl.progressAuth">
@@ -16,17 +32,12 @@
                 {{$ctrl.error}}
               </div>
 
-              <form name="formLogin" class="form-signin" ng-submit="$ctrl.login()">
-                <div class="form-group">
-                  <input type="email" ng-model="$ctrl.email" class="form-control" placeholder="Email address"
-                         required="" autofocus="">
-                </div>
-                <div class="form-group">
-                  <input type="password" ng-model="$ctrl.password" class="form-control" placeholder="Password"
-                         required="">
-                </div>
-                <button type="submit" class="btn btn-lg btn-info btn-block">Sign in</button>
-              </form>
+              <div class="alert alert-danger" ng-messages="formLogin.email.$error"
+                   ng-if="formLogin.email.$invalid && formLogin.email.$dirty">
+                <div ng-message="required">You did not enter your email address.</div>
+                <div ng-message="email">Your email address doesn't valid.</div>
+              </div>
+
             </div>
           </div>
         </div>
