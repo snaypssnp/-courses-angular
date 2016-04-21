@@ -5,6 +5,6 @@ import routerConfig from './routes';
 import AuthService from 'services/auth.service';
 
 export default angular.module('app.auth', [])
-    .component(AuthLoginComponent.selector, AuthLoginComponent)
-    .service('AuthService', AuthService)
-    .config(routerConfig);
+  .component(AuthLoginComponent.selector, AuthLoginComponent)
+  .service('AuthService', AuthService)
+  .config(routerConfig);

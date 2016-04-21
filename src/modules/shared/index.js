@@ -7,8 +7,8 @@ import {NavbarItemComponent} from './navbar-item/navbar-item.component.js';
 import LoaderDirective from './loader/loader.directive';
 
 export default angular.module('app.shared', [])
-    .component(BreadcrumbComponent.selector, BreadcrumbComponent)
-    .component(NavbarSideComponent.selector, NavbarSideComponent)
-    .component(NavbarTopComponent.selector, NavbarTopComponent)
-    .directive(NavbarItemComponent.selector, () => NavbarItemComponent)
-    .directive(LoaderDirective.selector, LoaderDirective)
+  .component(BreadcrumbComponent.selector, BreadcrumbComponent)
+  .component(NavbarSideComponent.selector, NavbarSideComponent)
+  .component(NavbarTopComponent.selector, NavbarTopComponent)
+  .directive(NavbarItemComponent.selector, () => NavbarItemComponent)
+  .directive(LoaderDirective.selector, LoaderDirective)

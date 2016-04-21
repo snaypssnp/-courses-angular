@@ -21,18 +21,18 @@ import routerConfig from './app.routes';
 import runConfig from './app.run';
 
 angular
-    .module('app', [
-        AngularUiRouter,
-        AngularMessages,
-        AngularFire,
+  .module('app', [
+    AngularUiRouter,
+    AngularMessages,
+    AngularFire,
 
-        AuthModule.name,
-        DashboardModule.name,
-        SharedModule.name,
-        UsersModule.name,
-        MessagesModule.name
+    AuthModule.name,
+    DashboardModule.name,
+    SharedModule.name,
+    UsersModule.name,
+    MessagesModule.name
 
-    ])
-    .constant('FIREBASE_URI', 'https://snayps.firebaseio.com/')
-    .config(routerConfig)
-    .run(runConfig);
+  ])
+  .constant('FIREBASE_URI', 'https://snayps.firebaseio.com/')
+  .config(routerConfig)
+  .run(runConfig);

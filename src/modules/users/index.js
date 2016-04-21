@@ -8,9 +8,9 @@ import {UserEditComponent} from './user-edit/user-edit.component';
 import {UserCreateComponent} from './user-create/user-create.component';
 
 export default angular.module('app.users', [])
-    .component(UserListComponent.selector, UserListComponent)
-    .component(UserEditComponent.selector, UserEditComponent)
-    .component(UserCreateComponent.selector, UserCreateComponent)
-    .directive(UserItemComponent.selector, () => UserItemComponent)
-    .service('UsersService', UsersService)
-    .config(routerConfig);
+  .component(UserListComponent.selector, UserListComponent)
+  .component(UserEditComponent.selector, UserEditComponent)
+  .component(UserCreateComponent.selector, UserCreateComponent)
+  .directive(UserItemComponent.selector, () => UserItemComponent)
+  .service('UsersService', UsersService)
+  .config(routerConfig);

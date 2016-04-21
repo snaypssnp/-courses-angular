@@ -1,7 +1,7 @@
 [
   {
-    "icon" : "fa-envelope",
-    "items" : [
+    "icon": "fa-envelope",
+    "items": [
       {
         "title": "Inbox",
         "link": "messages.list({typeMessage: 'inbox'})",
@@ -13,7 +13,6 @@
         "link": "messages.list({typeMessage: 'outbox'})",
         "icon": "fa-mail-forward"
       },
-
       {
         "divider": true,
         "title": "New Message",
@@ -22,10 +21,9 @@
       }
     ]
   },
-
   {
-    "icon" : "fa-user",
-    "items" : [
+    "icon": "fa-user",
+    "items": [
       {
         "title": "Users",
         "link": "users.list",
@@ -39,5 +37,4 @@
       }
     ]
   }
-
 ]

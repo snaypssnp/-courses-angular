@@ -2,23 +2,23 @@
 <html ng-app="app" ng-strict-di>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mail Box App</title>
-    <link href="./dist/styles.css" rel="stylesheet" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mail Box App</title>
+  <link href="./dist/styles.css" rel="stylesheet"/>
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
 
 </head>
 
 <body ng-cloak>
-    <div id="wrapper">
+<div id="wrapper">
 
-        <loader></loader>
+  <loader class="main-loader" show="false"></loader>
 
-        <ui-view id="main-view"></ui-view>
-    </div>
-    <script src="./dist/scripts.js"></script>
+  <ui-view id="main-view"></ui-view>
+</div>
+<script src="./dist/scripts.js"></script>
 </body>
 
 </html>
