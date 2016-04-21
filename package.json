@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Courses AngularJS",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --content-base public/ --port 8080 --colors --progress --watch",
-    "build": "NODE_ENV=production webpack --progress --colors",
-    "test": "NODE_ENV=test COVERAGE=true karma start"
+    "start": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --content-base public/ --port 8080 --colors --progress --watch",
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack --progress --colors",
+    "test": "NODE_ENV=test COVERAGE=true ./node_modules/.bin/karma start"
   },
   "repository": {
     "type": "git",
