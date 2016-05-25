@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/snaypssnp/-courses-angular#readme",
   "devDependencies": {
-    "angular": "^1.5.2",
     "angular-messages": "^1.5.2",
     "angular-mocks": "^1.5.3",
     "angular-ui-router": "^0.2.18",
@@ -54,5 +53,7 @@
     "webpack-dev-server": "^1.14.1",
     "webpack-notifier": "^1.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "angular": "^1.5.2"
+  }
 }
