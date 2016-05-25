@@ -15,13 +15,6 @@
 2. Build: npm run build
 3. Test: npm test
 
-### Credits:
-* Login: admin@admin.com
-* Password: admin
-
-### Demo:
-* http://snayps.firebaseapp.com
-
 
 
 
