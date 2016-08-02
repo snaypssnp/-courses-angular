@@ -7,7 +7,7 @@
 
 ### How to use:
 1. Clone repository git@github.com:snaypssnp/easy-admin-panel-angular.git
-2. cd [your-path]/courses-angular
+2. cd [your-path]/easy-admin-panel-angular
 3. npm install
 
 ### Usage:
