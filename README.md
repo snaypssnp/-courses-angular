@@ -6,7 +6,7 @@
 3. Karma, jasmine
 
 ### How to use:
-1. Clone repository git@github.com:snaypssnp/-courses-angular.git
+1. Clone repository git@github.com:snaypssnp/easy-admin-panel-angular.git
 2. cd [your-path]/courses-angular
 3. npm install
 
