@@ -1,4 +1,4 @@
-# Mail App on AngularJS
+# Admin Panel
 
 ### Requirements:
 1. Node, npm
